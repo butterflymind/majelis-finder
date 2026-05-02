@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Majelis Finder — Kajian Sunnah Jabodetabek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --brown-deep: #3d2b1a;
+  --brown-rich: #6b3d1e;
+  --brown-mid: #9c6b3a;
+  --brown-warm: #b8893a;
+  --amber: #c9963e;
+  --amber-light: #d4aa60;
+  --tan: #c4a87a;
+  --parchment: #f0e6d0;
+  --parchment-light: #f7f0e3;
+  --cream: #faf6ee;
+  --sand: #e8d8bb;
+  --sand-dark: #d4c099;
+  --teal-muted: #4a7a72;
+  --teal-faint: #e4f0ee;
+  --rust: #8b3a2a;
+  --rust-light: #c4503a;
+  --text: #2a1f14;
+  --text-mid: #5a4535;
+  --text-muted: #8a7060;
+  --text-light: #b09880;
+  --border: #ddd0b8;
+  --border-light: #ece4d4;
+  --white: #fff;
+  --shadow-sm: 0 2px 12px rgba(61,43,26,0.08);
+  --shadow-md: 0 6px 28px rgba(61,43,26,0.12);
+  --shadow-lg: 0 12px 48px rgba(61,43,26,0.16);
+}
+html{scroll-behavior:smooth;}
+body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--cream);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* ─── HERO ─────────────────────────────────── */
+.hero{
+  background: var(--brown-warm);
+  background-image:
+    radial-gradient(ellipse 70% 60% at 15% 20%, rgba(196,168,122,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 70% at 85% 80%, rgba(61,43,26,0.4) 0%, transparent 55%),
+    linear-gradient(155deg, #c9963e 0%, #9c6b3a 40%, #6b3d1e 80%, #3d2b1a 100%);
+  padding: 64px 24px 80px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:80px;
+  background:linear-gradient(to bottom,transparent,var(--cream));
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;max-width:620px;margin:0 auto;}
+.hero-tag{
+  display:inline-block;
+  font-size:10.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--amber-light);
+  border:1px solid rgba(212,170,96,0.4);
+  border-radius:100px;padding:5px 16px;margin-bottom:22px;
+}
+.hero h1{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:clamp(2.6rem,7vw,4rem);
+  font-weight:700;color:#fff;line-height:1.1;letter-spacing:-0.02em;
+  margin-bottom:6px;
+}
+.hero h1 em{color:var(--amber-light);font-style:italic;}
+.hero-sub{
+  font-size:clamp(0.95rem,2.5vw,1.1rem);
+  color:rgba(255,255,255,0.72);
+  max-width:460px;margin:0 auto 14px;font-weight:300;line-height:1.7;
+}
+.hero-intro{
+  font-size:0.87rem;color:rgba(255,255,255,0.45);
+  max-width:400px;margin:0 auto 36px;line-height:1.75;font-style:italic;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.12);
+  color:#fff;padding:13px 26px;border-radius:100px;
+  font-weight:600;font-size:0.92rem;text-decoration:none;
+  border:1.5px solid rgba(255,255,255,0.3);
+  transition:all 0.22s;backdrop-filter:blur(4px);
+}
+.hero-cta:hover{background:rgba(255,255,255,0.22);border-color:rgba(255,255,255,0.55);transform:translateY(-2px);}
+
+/* ─── TABS ─────────────────────────────────── */
+.tabs-wrap{
+  background:var(--brown-deep);
+  position:sticky;top:0;z-index:100;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.tabs-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;overflow-x:auto;scrollbar-width:none;padding:0 20px;
+}
+.tabs-inner::-webkit-scrollbar{display:none;}
+.tab-btn{
+  display:flex;align-items:center;gap:7px;
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:0.8rem;font-weight:500;
+  color:rgba(255,255,255,0.5);
+  padding:15px 18px;white-space:nowrap;
+  border:none;background:none;cursor:pointer;
+  border-bottom:2px solid transparent;
+  transition:all 0.18s;letter-spacing:0.01em;
+}
+.tab-btn svg{opacity:0.6;}
+.tab-btn:hover{color:rgba(255,255,255,0.85);}
+.tab-btn.active{color:var(--amber-light);border-bottom-color:var(--amber-light);}
+.tab-btn.active svg{opacity:1;}
+
+/* ─── CONTENT ───────────────────────────────── */
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+.content-wrap{max-width:820px;margin:0 auto;padding:56px 24px 80px;}
+.content-wide{max-width:1100px;margin:0 auto;padding:48px 24px 80px;}
+
+/* ─── SECTION HEADERS ───────────────────────── */
+.sec-eyebrow{
+  font-size:10.5px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--brown-mid);margin-bottom:8px;
+}
+.sec-title{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;
+  color:var(--text);line-height:1.2;letter-spacing:-0.01em;margin-bottom:8px;
+}
+.sec-sub{font-size:0.97rem;color:var(--text-muted);font-weight:300;margin-bottom:0;line-height:1.7;}
+.sec-rule{width:36px;height:2.5px;background:var(--amber);border-radius:2px;margin:16px 0 36px;}
+
+/* ─── KEUTAMAAN ─────────────────────────────── */
+.hadith-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px;}
+@media(max-width:640px){.hadith-grid{grid-template-columns:1fr;}}
+.hadith-card{
+  background:var(--white);border:1px solid var(--border-light);
+  border-radius:18px;padding:24px 22px;box-shadow:var(--shadow-sm);
+  position:relative;overflow:hidden;
+}
+.hadith-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--amber),var(--tan));
+}
+.hadith-card.featured{
+  grid-column:1/-1;
+  background:var(--brown-deep);
+  color:#fff;
+}
+.hadith-card.featured::before{background:linear-gradient(90deg,var(--amber-light),var(--tan));}
+.hadith-label{
+  font-size:9.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:14px;
+}
+.hadith-card.featured .hadith-label{color:var(--amber-light);}
+.hadith-arabic{
+  font-family:"Amiri",serif;font-size:1.35rem;line-height:2.1;
+  direction:rtl;text-align:right;
+  color:var(--brown-warm);margin-bottom:12px;
+  padding-bottom:12px;border-bottom:1px solid var(--border-light);
+}
+.hadith-card.featured .hadith-arabic{color:var(--amber-light);border-bottom-color:rgba(255,255,255,0.1);}
+.hadith-trans{font-size:0.78rem;color:var(--text-light);font-style:italic;margin-bottom:8px;line-height:1.6;}
+.hadith-card.featured .hadith-trans{color:rgba(255,255,255,0.45);}
+.hadith-meaning{font-size:0.88rem;color:var(--text-mid);line-height:1.7;}
+.hadith-card.featured .hadith-meaning{color:rgba(255,255,255,0.75);}
+.hadith-source{
+  display:inline-block;margin-top:10px;
+  font-size:0.75rem;font-weight:600;
+  color:var(--amber);background:var(--parchment);
+  padding:3px 10px;border-radius:100px;
+}
+.hadith-card.featured .hadith-source{background:rgba(255,255,255,0.1);color:var(--amber-light);}
+
+/* ADAB LIST */
+.adab-section-title{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:1.25rem;font-weight:600;color:var(--text);
+  margin:40px 0 20px;display:flex;align-items:center;gap:10px;
+}
+.adab-section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+.adab-list{display:flex;flex-direction:column;gap:0;}
+.adab-item{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:18px 0;border-bottom:1px solid var(--border-light);
+}
+.adab-item:last-child{border-bottom:none;}
+.adab-num{
+  min-width:32px;height:32px;
+  background:var(--parchment);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.8rem;font-weight:700;color:var(--brown-mid);
+  flex-shrink:0;margin-top:1px;
+}
+.adab-item strong{display:block;font-size:0.94rem;font-weight:600;color:var(--text);margin-bottom:3px;}
+.adab-item p{font-size:0.87rem;color:var(--text-muted);line-height:1.65;}
+.adab-item p em{color:var(--brown-rich);font-style:italic;}
+
+/* DUA STRIP */
+.dua-strip{
+  background:var(--parchment-light);border:1px solid var(--border);
+  border-radius:18px;padding:28px 26px;margin-top:40px;
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+}
+@media(max-width:600px){.dua-strip{grid-template-columns:1fr;gap:20px;}}
+.dua-block{}
+.dua-label{font-size:9.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--rust-light);margin-bottom:12px;}
+.dua-ar{
+  font-family:"Amiri",serif;font-size:1.3rem;line-height:2.1;
+  direction:rtl;text-align:right;color:var(--brown-deep);
+  margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);
+}
+.dua-trans{font-size:0.77rem;color:var(--text-light);font-style:italic;margin-bottom:6px;}
+.dua-meaning{font-size:0.87rem;color:var(--text-mid);line-height:1.65;}
+
+/* ─── MOSQUE TAB ────────────────────────────── */
+.search-filter-row{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+  margin-bottom:24px;
+}
+.search-box{
+  flex:1;min-width:200px;
+  display:flex;align-items:center;gap:8px;
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:100px;padding:9px 16px;
+  box-shadow:var(--shadow-sm);
+}
+.search-box input{
+  border:none;outline:none;font-family:inherit;font-size:0.87rem;
+  color:var(--text);background:transparent;width:100%;
+}
+.search-box input::placeholder{color:var(--text-light);}
+.search-box svg{color:var(--text-light);flex-shrink:0;}
+/* FILTER TABS */
+.filter-tabs{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-bottom:32px;
+}
+.ftab{
+  display:flex;align-items:center;gap:6px;
+  padding:8px 16px;border-radius:100px;
+  border:1.5px solid var(--border);background:var(--parchment-light);
+  color:var(--text-muted);font-size:0.8rem;font-weight:500;
+  cursor:pointer;transition:all 0.18s;font-family:inherit;
+  white-space:nowrap;
+}
+.ftab:hover{border-color:var(--amber);color:var(--brown-rich);background:var(--parchment);}
+.ftab.active{
+  background:var(--brown-deep);border-color:var(--brown-deep);
+  color:var(--amber-light);
+}
+.ftab .ftab-count{
+  font-size:0.7rem;font-weight:600;
+  background:rgba(255,255,255,0.15);
+  padding:1px 7px;border-radius:20px;
+  color:inherit;opacity:0.8;
+}
+.ftab:not(.active) .ftab-count{
+  background:var(--parchment);color:var(--brown-mid);
+}
+
+/* WILAYAH GROUP */
+.wilayah-group{margin-bottom:40px;}
+.wilayah-group.hidden{display:none;}
+.wilayah-header{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:16px;
+  padding-bottom:12px;
+  border-bottom:1.5px solid var(--border);
+}
+.wilayah-icon{display:none;}
+.wilayah-name{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:1.1rem;font-weight:700;color:var(--text);
+}
+.wilayah-count{
+  font-size:0.75rem;color:var(--text-light);
+  background:var(--parchment);border:1px solid var(--border);
+  padding:2px 10px;border-radius:20px;margin-left:auto;white-space:nowrap;
+}
+
+.mosque-count-row{
+  font-size:0.8rem;color:var(--text-light);margin-bottom:20px;
+  display:flex;align-items:center;gap:6px;
+}
+.mosque-count-row strong{color:var(--text-mid);}
+
+/* GRID */
+.mosque-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:14px;
+}
+@media(max-width:640px){.mosque-grid{grid-template-columns:1fr;}}
+.mosque-card{
+  background:var(--white);border:1px solid var(--border-light);
+  border-radius:18px;padding:20px 18px 14px;
+  box-shadow:var(--shadow-sm);
+  transition:transform 0.2s,box-shadow 0.2s;
+  position:relative;overflow:hidden;
+}
+.mosque-card.hidden{display:none;}
+.mosque-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2.5px;
+  background:linear-gradient(90deg,var(--amber),var(--tan));
+  opacity:0;transition:opacity 0.2s;
+}
+.mosque-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.mosque-card:hover::before{opacity:1;}
+.card-top{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;}
+.card-numbadge{
+  min-width:30px;height:30px;
+  background:var(--parchment);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:0.88rem;font-weight:700;
+  color:var(--tan);flex-shrink:0;
+}
+.card-info{flex:1;min-width:0;}
+.card-name{font-size:0.95rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:4px;}
+.card-area{
+  display:flex;align-items:center;gap:4px;
+  font-size:0.78rem;color:var(--text-light);margin-bottom:6px;
+}
+.card-area svg{color:var(--amber);flex-shrink:0;}
+.schedule-note{
+  display:flex;align-items:flex-start;gap:5px;
+  font-size:0.75rem;color:var(--text-muted);line-height:1.5;
+  background:var(--parchment-light);border-radius:8px;padding:6px 9px;
+  border:1px solid var(--border-light);
+}
+.schedule-note svg{color:var(--amber);flex-shrink:0;margin-top:1px;}
+.schedule-note a{color:var(--brown-rich);font-weight:500;text-decoration:none;}
+.schedule-note a:hover{text-decoration:underline;}
+.card-links{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px;}
+.card-pill{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 11px;border-radius:100px;
+  font-size:0.75rem;font-weight:500;text-decoration:none;
+  transition:all 0.16s;
+}
+.pill-map{background:var(--teal-faint);color:var(--teal-muted);border:1px solid rgba(74,122,114,0.2);}
+.pill-map:hover{background:var(--teal-muted);color:#fff;}
+.pill-ig{
+  background:linear-gradient(135deg,#f5e8f0,#fce4e0);
+  color:#8b3a70;border:1px solid rgba(139,58,112,0.18);
+}
+.pill-ig:hover{background:linear-gradient(135deg,#8b3a70,#c45038);color:#fff;border-color:transparent;}
+.pill-fb{background:#eef1fa;color:#3b5998;border:1px solid rgba(59,89,152,0.18);}
+.pill-fb:hover{background:#3b5998;color:#fff;}
+.pill-web{background:var(--parchment);color:var(--brown-mid);border:1px solid var(--border);}
+.pill-web:hover{background:var(--brown-deep);color:var(--amber-light);}
+
+/* REVIEW SECTION */
+.review-section{border-top:1px solid var(--border-light);padding-top:12px;}
+.review-toggle-btn{
+  display:flex;align-items:center;gap:6px;
+  font-family:inherit;font-size:0.78rem;font-weight:500;
+  color:var(--text-muted);background:none;border:none;cursor:pointer;
+  padding:4px 0;transition:color 0.16s;
+}
+.review-toggle-btn:hover{color:var(--brown-rich);}
+.review-form{margin-top:12px;}
+.star-row{display:flex;gap:3px;margin-bottom:10px;}
+.star{
+  font-size:1.3rem;cursor:pointer;color:var(--border);
+  transition:color 0.12s,transform 0.12s;line-height:1;
+}
+.star.lit{color:var(--amber);}
+.star:hover{transform:scale(1.1);}
+.review-form textarea{
+  width:100%;font-family:inherit;font-size:0.83rem;
+  padding:10px 12px;border:1.5px solid var(--border);
+  border-radius:12px;background:var(--parchment-light);
+  color:var(--text);resize:none;line-height:1.55;
+  transition:border-color 0.16s;outline:none;
+}
+.review-form textarea:focus{border-color:var(--amber);}
+.review-form textarea::placeholder{color:var(--text-light);}
+.submit-review-btn{
+  margin-top:8px;padding:8px 18px;border-radius:100px;
+  background:var(--brown-deep);color:var(--amber-light);
+  font-family:inherit;font-size:0.8rem;font-weight:600;
+  border:none;cursor:pointer;transition:all 0.18s;letter-spacing:0.01em;
+}
+.submit-review-btn:hover{background:var(--brown-rich);}
+.reviews-list{margin-top:12px;display:flex;flex-direction:column;gap:8px;}
+.review-item{
+  background:var(--parchment-light);border-radius:10px;
+  padding:10px 12px;border:1px solid var(--border-light);
+}
+.review-header{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+.review-stars{font-size:0.8rem;color:var(--amber);}
+.review-date{font-size:0.72rem;color:var(--text-light);}
+.review-text{font-size:0.83rem;color:var(--text-mid);line-height:1.55;}
+.empty-reviews{font-size:0.78rem;color:var(--text-light);font-style:italic;padding:4px 0;}
+
+/* ─── FAQ ───────────────────────────────────── */
+.faq-list{display:flex;flex-direction:column;gap:0;}
+.faq-item{border-bottom:1px solid var(--border-light);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:18px 0;cursor:pointer;
+  font-size:0.93rem;font-weight:500;color:var(--text);
+  transition:color 0.16s;user-select:none;
+}
+.faq-q:hover{color:var(--brown-rich);}
+.faq-chevron{
+  width:20px;height:20px;min-width:20px;
+  background:var(--parchment);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-muted);transition:transform 0.22s,background 0.18s;
+}
+.faq-item.open .faq-chevron{transform:rotate(180deg);background:var(--amber);color:#fff;}
+.faq-a{
+  font-size:0.87rem;color:var(--text-muted);line-height:1.75;
+  padding:0 0 18px;display:none;
+}
+.faq-a.visible{display:block;}
+.faq-a strong{color:var(--text-mid);}
+.faq-a a{color:var(--brown-rich);text-decoration:none;font-weight:500;}
+.faq-a a:hover{text-decoration:underline;}
+.faq-a em{color:var(--brown-mid);font-style:italic;}
+
+/* ─── FOOTER ────────────────────────────────── */
+.footer{
+  background:var(--brown-deep);padding:48px 24px;text-align:center;
+}
+.footer-name{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:-0.01em;margin-bottom:10px;
+}
+.footer-note{font-size:0.83rem;color:rgba(255,255,255,0.45);max-width:400px;margin:0 auto;line-height:1.7;}
+.footer-arabic{
+  font-family:"Amiri",serif;font-size:1.3rem;
+  color:var(--amber-light);margin-top:20px;direction:rtl;
+}
+
+/* ─── UTILS ─────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.mosque-card{animation:fadeUp 0.35s ease both;}
+
+.transport-note{
+  display:flex;flex-direction:column;gap:3px;
+  background:var(--parchment-light);border:1px solid var(--border-light);
+  border-radius:10px;padding:8px 11px;margin:8px 0 4px;
+}
+.transport-label{
+  font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--brown-mid);margin-bottom:2px;
+}
+.transport-text{font-size:0.78rem;color:var(--text-muted);line-height:1.6;}
+.pill-mapdir{background:#e8f0ee;color:#2d6b5a;border:1px solid rgba(45,107,90,0.2);}
+.pill-mapdir:hover{background:#2d6b5a;color:#fff;}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">Jabodetabek · Kajian Sunnah</span>
+    <h1>Majelis <em>Finder</em></h1>
+    <p class="hero-sub">Panduan menemukan kajian Islam offline di Jabodetabek — lokasi, jadwal, dan ulasan dari jamaah.</p>
+    <a href="#" onclick="switchTab('masjid');return false;" class="hero-cta">
+      Temukan Masjid
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- TABS -->
+<div class="tabs-wrap">
+  <div class="tabs-inner">
+    <button class="tab-btn active" onclick="switchTab('keutamaan')" id="tab-keutamaan">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Keutamaan & Adab
+    </button>
+    <button class="tab-btn" onclick="switchTab('masjid')" id="tab-masjid">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Daftar Masjid
+    </button>
+    <button class="tab-btn" onclick="switchTab('faq')" id="tab-faq">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      FAQ
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB: KEUTAMAAN                              -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-content active" id="content-keutamaan">
+<div class="content-wrap">
+
+  <div class="sec-eyebrow">Dalil & Hadits</div>
+  <h2 class="sec-title">Keutamaan Menuntut Ilmu</h2>
+  <p class="sec-sub">Beberapa dalil yang mengingatkan kita mengapa perjalanan ke majelis ilmu adalah perjalanan yang bernilai.</p>
+  <div class="sec-rule"></div>
+
+  <div class="hadith-grid">
+
+    <div class="hadith-card featured">
+      <div class="hadith-label">HR. Thabrani — Keutamaan Utama</div>
+      <div class="hadith-arabic">مَنْ غَدَا إِلَى الْمَسْجِدِ لَا يُرِيدُ إِلَّا أَنْ يَتَعَلَّمَ خَيْرًا أَوْ يُعَلِّمَهُ كَانَ لَهُ كَأَجْرِ حَاجٍّ تَامًّا حَجَّتُهُ</div>
+      <p class="hadith-trans">Man ghada ilal masjidi la yuridu illa an yata'allama khayran aw yu'allimahu kana lahu ka'ajri hajjin tamman hajjatuhu</p>
+      <p class="hadith-meaning">"Barangsiapa yang berangkat ke masjid dengan tujuan mempelajari kebaikan atau mengajarkannya, maka baginya pahala seperti orang yang menunaikan haji secara sempurna."</p>
+      <span class="hadith-source">HR. Thabrani — Shahih Al-Targhib no. 86</span>
+    </div>
+
+    <div class="hadith-card">
+      <div class="hadith-label">HR. Muslim — Jalan ke Surga</div>
+      <div class="hadith-arabic">مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ</div>
+      <p class="hadith-trans">Man salaka thariqan yaltamisu fihi 'ilman sahhalallahu lahu bihi thariqan ilal jannah</p>
+      <p class="hadith-meaning">"Barangsiapa menempuh suatu jalan untuk mencari ilmu, Allah akan mudahkan baginya jalan menuju surga."</p>
+      <span class="hadith-source">HR. Muslim no. 2699</span>
+    </div>
+
+    <div class="hadith-card">
+      <div class="hadith-label">HR. Muslim — Berkumpul di Majelis</div>
+      <div class="hadith-arabic">وَمَا اجْتَمَعَ قَوْمٌ فِي بَيْتٍ مِنْ بُيُوتِ اللهِ يَتْلُونَ كِتَابَ اللهِ وَيَتَدَارَسُونَهُ بَيْنَهُمْ إِلَّا نَزَلَتْ عَلَيْهِمُ السَّكِينَةُ</div>
+      <p class="hadith-trans">Wama ijtama'a qawmun fi baytin min buyutillahi yatluna kitaballahi wa yatadarasunahu baynahum illa nazalat 'alayhimus sakinatu...</p>
+      <p class="hadith-meaning">"Tidaklah suatu kaum berkumpul di salah satu rumah Allah, membaca Al-Qur'an dan mempelajarinya bersama, kecuali turunlah ketenangan atas mereka, rahmat meliputi mereka, para malaikat mengelilingi mereka, dan Allah menyebut-nyebut mereka di hadapan para malaikat-Nya."</p>
+      <span class="hadith-source">HR. Muslim no. 2699</span>
+    </div>
+
+    <div class="hadith-card">
+      <div class="hadith-label">HR. Abu Dawud — Malaikat Merendahkan Sayapnya</div>
+      <div class="hadith-arabic">إِنَّ الْمَلَائِكَةَ لَتَضَعُ أَجْنِحَتَهَا رِضًا لِطَالِبِ الْعِلْمِ</div>
+      <p class="hadith-trans">Innal mala'ikata lata dha'u ajnihatahar ridhan lithalibil 'ilm</p>
+      <p class="hadith-meaning">"Sesungguhnya para malaikat benar-benar merendahkan sayap-sayapnya karena ridha kepada penuntut ilmu."</p>
+      <span class="hadith-source">HR. Abu Dawud no. 3641 — Shahih</span>
+    </div>
+
+    <div class="hadith-card">
+      <div class="hadith-label">HR. Ibnu Majah — Kewajiban Menuntut Ilmu</div>
+      <div class="hadith-arabic">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</div>
+      <p class="hadith-trans">Thalabul 'ilmi faridhatun 'ala kulli muslim</p>
+      <p class="hadith-meaning">"Menuntut ilmu adalah kewajiban bagi setiap muslim."</p>
+      <span class="hadith-source">HR. Ibnu Majah no. 224 — Shahih</span>
+    </div>
+
+    <div class="hadith-card">
+      <div class="hadith-label">HR. Bukhari — Ikatlah Ilmu</div>
+      <div class="hadith-arabic">قَيِّدُوا الْعِلْمَ بِالْكِتَابَةِ</div>
+      <p class="hadith-trans">Qayyidul 'ilma bil kitabah</p>
+      <p class="hadith-meaning">"Ikatlah ilmu dengan tulisan." — Inilah mengapa membawa catatan ke majelis sangat dianjurkan oleh para ulama.</p>
+      <span class="hadith-source">Atsar Ibnu Abbas — Shahih</span>
+    </div>
+
+  </div>
+
+  <!-- ADAB -->
+  <div class="adab-section-title">Adab Menghadiri Majelis Ilmu</div>
+  <div class="adab-list">
+    <div class="adab-item">
+      <div class="adab-num">01</div>
+      <div>
+        <strong>Mulai dengan Salam</strong>
+        <p>Ucapkan <em>Assalamu'alaikum</em> saat memasuki majelis. Salam adalah pembuka yang menebarkan kedamaian dan menata niat.</p>
+      </div>
+    </div>
+    <div class="adab-item">
+      <div class="adab-num">02</div>
+      <div>
+        <strong>Luruskan Niat</strong>
+        <p>Ilmu yang dicari karena Allah memiliki bobot yang berbeda. Ingatkan dirimu sebelum melangkah: <em>"Aku pergi untuk mencari ridha-Nya."</em></p>
+      </div>
+    </div>
+    <div class="adab-item">
+      <div class="adab-num">03</div>
+      <div>
+        <strong>Duduk dengan Tawadhu'</strong>
+        <p>Kamu adalah murid. Begitu juga semua orang di ruangan itu. Dengarkan tanpa menyela, karena <em>ilmu datang kepada hati yang tenang.</em></p>
+      </div>
+    </div>
+    <div class="adab-item">
+      <div class="adab-num">04</div>
+      <div>
+        <strong>Bawa Catatan</strong>
+        <p>Rasulullah ﷺ besabda: <em>"Ikatlah ilmu dengan tulisan."</em> Satu faidah yang tercatat bisa menjadi pengingat seumur hidup.</p>
+      </div>
+    </div>
+    <div class="adab-item">
+      <div class="adab-num">05</div>
+      <div>
+        <strong>Simpan Ponsel</strong>
+        <p>Notifikasi bisa menunggu. Hadirlah sepenuhnya — baik fisik maupun pikiran. Itu bentuk penghormatan pada ilmu dan pengajarnya.</p>
+      </div>
+    </div>
+    <div class="adab-item">
+      <div class="adab-num">06</div>
+      <div>
+        <strong>Doakan Para Ulama</strong>
+        <p>Para ustadz dan ulama menanggung amanah yang berat. Sebuah doa tulus untuk mereka adalah sedekah yang tidak terlihat namun bermakna.</p>
+      </div>
+    </div>
+    <div class="adab-item">
+      <div class="adab-num">07</div>
+      <div>
+        <strong>Hindari Debat, Cari Pemahaman</strong>
+        <p>Perbedaan pendapat itu wajar dalam ilmu. Majelis adalah tempat bertanya dan belajar, bukan arena adu argumen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DUA STRIP -->
+  <div class="dua-strip">
+    <div class="dua-block">
+      <div class="dua-label">Doa Sebelum Belajar</div>
+      <div class="dua-ar">سُبْحَانَكَ اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا وَعَمَلًا مُتَقَبَّلًا</div>
+      <p class="dua-trans">Subhanaka Allahumma inni as'aluka 'ilman nafi'an wa 'amalan mutaqabbalan</p>
+      <p class="dua-meaning">Ya Allah, aku memohon kepada-Mu ilmu yang bermanfaat dan amal yang diterima.</p>
+    </div>
+    <div class="dua-block">
+      <div class="dua-label">Doa Penutup Majelis</div>
+      <div class="dua-ar">سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا أَنْتَ أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ</div>
+      <p class="dua-trans">Subhanaka Allahumma wa bihamdika, asyhadu an la ilaha illa anta, astaghfiruka wa atubu ilaik</p>
+      <p class="dua-meaning">Maha suci Engkau ya Allah dan dengan memuji-Mu. Aku bersaksi tiada ilah selain Engkau. Aku memohon ampun dan bertaubat kepada-Mu.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB: MASJID                                 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-content" id="content-masjid">
+<div class="content-wide">
+
+  <div class="sec-eyebrow">30 Masjid · Jabodetabek</div>
+  <h2 class="sec-title">Daftar Masjid Kajian</h2>
+  <p class="sec-sub">Klik <strong>Jadwal Kajian</strong> di tiap kartu untuk mengecek jadwal terbaru langsung di Instagram masjid. Tinggalkan juga ulasan jika kamu pernah hadir.</p>
+  <div class="sec-rule"></div>
+
+<div class="search-filter-row" style="margin-bottom:20px;">
+    <div class="search-box">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="search-input" placeholder="Cari nama masjid atau area..." oninput="filterMosques()">
+    </div>
+  </div>
+  <div class="filter-tabs">
+  <button class="ftab active" data-filter="semua" onclick="setFilter(this,'semua')">Semua <span class="ftab-count">30</span></button>
+  <button class="ftab" data-filter="jakarta-selatan" onclick="setFilter(this,'jakarta-selatan')">Jakarta Selatan <span class="ftab-count">7</span></button>
+  <button class="ftab" data-filter="jakarta-timur" onclick="setFilter(this,'jakarta-timur')">Jakarta Timur <span class="ftab-count">3</span></button>
+  <button class="ftab" data-filter="jakarta-barat" onclick="setFilter(this,'jakarta-barat')">Jakarta Barat <span class="ftab-count">1</span></button>
+  <button class="ftab" data-filter="bogor" onclick="setFilter(this,'bogor')">Bogor & Sekitarnya <span class="ftab-count">10</span></button>
+  <button class="ftab" data-filter="bekasi" onclick="setFilter(this,'bekasi')">Bekasi <span class="ftab-count">4</span></button>
+  <button class="ftab" data-filter="depok" onclick="setFilter(this,'depok')">Depok <span class="ftab-count">2</span></button>
+  <button class="ftab" data-filter="tangerang" onclick="setFilter(this,'tangerang')">Tangerang & Tangsel <span class="ftab-count">3</span></button>
+</div>
+<div class="mosque-count-row">Menampilkan <strong id="count-num">30</strong> masjid</div>
+
+<div id="mosque-groups">
+
+<div class="wilayah-group" id="group-jakarta-selatan" data-group="jakarta-selatan">
+  <div class="wilayah-header">
+        <span class="wilayah-name">Jakarta Selatan</span>
+    <span class="wilayah-count">7 masjid</span>
+  </div>
+  <div class="mosque-grid">
+<div class="mosque-card" id="m2" data-area="Blok M, Jakarta Selatan">
+  <div class="card-top">
+    <div class="card-numbadge">02</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Nurul Iman Blok M</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Blok M, Jakarta Selatan</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidnuruliman" target="_blank">@masjidnuruliman</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">MRT Blok M (±5 mnt jalan) · Transjakarta Blok M · Banyak angkot dan metromini</span></div>
+  <div class="card-links"><a href="https://share.google/gilpE0D2glxAN0CWN" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidnuruliman" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a>
+<a href="https://www.google.com/maps?ftid=0x2e69f169553f8375:0x49ce1e7eda12e00b" target="_blank" class="card-pill pill-mapdir"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Navigasi</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m2')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m2">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m2" style="display:none;">
+      <div class="star-row" id="stars-m2">
+        <span class="star" onclick="setStars('m2',1)">★</span>
+        <span class="star" onclick="setStars('m2',2)">★</span>
+        <span class="star" onclick="setStars('m2',3)">★</span>
+        <span class="star" onclick="setStars('m2',4)">★</span>
+        <span class="star" onclick="setStars('m2',5)">★</span>
+      </div>
+      <textarea id="txt-m2" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m2')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m2"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m8" data-area="Kebayoran Lama, Jakarta Selatan">
+  <div class="card-top">
+    <div class="card-numbadge">08</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Jami Darussalam</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kebayoran Lama, Jakarta Selatan</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjiddarussalamkebayoran" target="_blank">@masjiddarussalamkebayoran</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">MRT Fatmawati / Cipete Raya (±10 mnt ojol) · Transjakarta Kebayoran Lama</span></div>
+  <div class="card-links"><a href="https://share.google/zlTFgDaqc9FfKdTRU" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjiddarussalamkebayoran" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a>
+<a href="https://www.google.com/maps/place/Masjid+Jami+Darussalam,+Kebayoran+Lama" target="_blank" class="card-pill pill-mapdir"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Navigasi</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m8')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m8">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m8" style="display:none;">
+      <div class="star-row" id="stars-m8">
+        <span class="star" onclick="setStars('m8',1)">★</span>
+        <span class="star" onclick="setStars('m8',2)">★</span>
+        <span class="star" onclick="setStars('m8',3)">★</span>
+        <span class="star" onclick="setStars('m8',4)">★</span>
+        <span class="star" onclick="setStars('m8',5)">★</span>
+      </div>
+      <textarea id="txt-m8" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m8')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m8"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m21" data-area="Centennial Tower, Jakarta Selatan">
+  <div class="card-top">
+    <div class="card-numbadge">21</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Nur Salma</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Centennial Tower, Jakarta Selatan</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidnursalma" target="_blank">@masjidnursalma</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">MRT Senayan / ASEAN (±5 mnt jalan) · Transjakarta Gatot Subroto</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/1NgKwSqgBRvd72FU6" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidnursalma" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m21')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m21">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m21" style="display:none;">
+      <div class="star-row" id="stars-m21">
+        <span class="star" onclick="setStars('m21',1)">★</span>
+        <span class="star" onclick="setStars('m21',2)">★</span>
+        <span class="star" onclick="setStars('m21',3)">★</span>
+        <span class="star" onclick="setStars('m21',4)">★</span>
+        <span class="star" onclick="setStars('m21',5)">★</span>
+      </div>
+      <textarea id="txt-m21" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m21')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m21"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m22" data-area="Cipayung, Jakarta Timur">
+  <div class="card-top">
+    <div class="card-numbadge">22</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Soleh Hawa</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cipayung, Jakarta Timur</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjid.solehhawa" target="_blank">@masjid.solehhawa</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">Angkot M44 / bus dari Terminal Kampung Rambutan · Via Jl. Raya Cipayung</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/dqVKQXQ3dYp5qWUp7" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjid.solehhawa" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m22')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m22">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m22" style="display:none;">
+      <div class="star-row" id="stars-m22">
+        <span class="star" onclick="setStars('m22',1)">★</span>
+        <span class="star" onclick="setStars('m22',2)">★</span>
+        <span class="star" onclick="setStars('m22',3)">★</span>
+        <span class="star" onclick="setStars('m22',4)">★</span>
+        <span class="star" onclick="setStars('m22',5)">★</span>
+      </div>
+      <textarea id="txt-m22" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m22')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m22"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m23" data-area="Pondok Pinang, Jakarta Selatan">
+  <div class="card-top">
+    <div class="card-numbadge">23</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Baiturrahman</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Pondok Pinang, Jakarta Selatan</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/baiturrahmanmasjid_ponpin" target="_blank">@baiturrahmanmasjid_ponpin</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">MRT Lebak Bulus (±10 mnt ojol) · Transjakarta Pondok Pinang</span></div>
+  <div class="card-links"><a href="https://www.google.com/maps/place/Baiturrahman+Mosque" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/baiturrahmanmasjid_ponpin" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m23')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m23">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m23" style="display:none;">
+      <div class="star-row" id="stars-m23">
+        <span class="star" onclick="setStars('m23',1)">★</span>
+        <span class="star" onclick="setStars('m23',2)">★</span>
+        <span class="star" onclick="setStars('m23',3)">★</span>
+        <span class="star" onclick="setStars('m23',4)">★</span>
+        <span class="star" onclick="setStars('m23',5)">★</span>
+      </div>
+      <textarea id="txt-m23" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m23')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m23"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m25" data-area="Kalibata City, Jakarta Selatan">
+  <div class="card-top">
+    <div class="card-numbadge">25</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Nurullah Kalibata City</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Kalibata City, Jakarta Selatan</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidnurullahkalibatacity" target="_blank">@masjidnurullahkalibatacity</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Kalibata (±5 mnt jalan) · Transjakarta Kalibata City</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/aJDgMZQbSYRweNSY6" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidnurullahkalibatacity" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m25')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m25">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m25" style="display:none;">
+      <div class="star-row" id="stars-m25">
+        <span class="star" onclick="setStars('m25',1)">★</span>
+        <span class="star" onclick="setStars('m25',2)">★</span>
+        <span class="star" onclick="setStars('m25',3)">★</span>
+        <span class="star" onclick="setStars('m25',4)">★</span>
+        <span class="star" onclick="setStars('m25',5)">★</span>
+      </div>
+      <textarea id="txt-m25" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m25')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m25"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m30" data-area="Asem Baris, Jakarta Selatan">
+  <div class="card-top">
+    <div class="card-numbadge">30</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid At-Tiin</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Asem Baris, Jakarta Selatan</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidattiinasembaris" target="_blank">@masjidattiinasembaris</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Tebet (±10 mnt ojol) · Transjakarta Tebet / MT Haryono</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/bsW4qrBFpFmhdFWa8" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidattiinasembaris" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m30')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m30">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m30" style="display:none;">
+      <div class="star-row" id="stars-m30">
+        <span class="star" onclick="setStars('m30',1)">★</span>
+        <span class="star" onclick="setStars('m30',2)">★</span>
+        <span class="star" onclick="setStars('m30',3)">★</span>
+        <span class="star" onclick="setStars('m30',4)">★</span>
+        <span class="star" onclick="setStars('m30',5)">★</span>
+      </div>
+      <textarea id="txt-m30" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m30')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m30"></div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="wilayah-group" id="group-jakarta-timur" data-group="jakarta-timur">
+  <div class="wilayah-header">
+        <span class="wilayah-name">Jakarta Timur</span>
+    <span class="wilayah-count">3 masjid</span>
+  </div>
+  <div class="mosque-grid">
+<div class="mosque-card" id="m3" data-area="Cilangkap, Jakarta Timur">
+  <div class="card-top">
+    <div class="card-numbadge">03</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Hijau Nurul Iman</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cilangkap, Jakarta Timur</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidhijauofficial" target="_blank">@masjidhijauofficial</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">Angkot 05 / M44 dari Kampung Rambutan · Transjakarta koridor 11 lanjut ojol</span></div>
+  <div class="card-links"><a href="https://share.google/0mvPGnlacbFFZQ8gE" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidhijauofficial" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a>
+<a href="https://www.google.com/maps/place/Masjid+Hijau+Nurul+Iman+Cilangkap" target="_blank" class="card-pill pill-mapdir"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Navigasi</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m3')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m3">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m3" style="display:none;">
+      <div class="star-row" id="stars-m3">
+        <span class="star" onclick="setStars('m3',1)">★</span>
+        <span class="star" onclick="setStars('m3',2)">★</span>
+        <span class="star" onclick="setStars('m3',3)">★</span>
+        <span class="star" onclick="setStars('m3',4)">★</span>
+        <span class="star" onclick="setStars('m3',5)">★</span>
+      </div>
+      <textarea id="txt-m3" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m3')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m3"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m9" data-area="Cakung, Jakarta Timur">
+  <div class="card-top">
+    <div class="card-numbadge">09</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Al Hidayah</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cakung, Jakarta Timur</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidalhidayahtpg" target="_blank">@masjidalhidayahtpg</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Cakung (±10 mnt ojol) · Transjakarta koridor 11 / 12</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/2sYfT36UHj2HwxU6A" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidalhidayahtpg" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m9')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m9">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m9" style="display:none;">
+      <div class="star-row" id="stars-m9">
+        <span class="star" onclick="setStars('m9',1)">★</span>
+        <span class="star" onclick="setStars('m9',2)">★</span>
+        <span class="star" onclick="setStars('m9',3)">★</span>
+        <span class="star" onclick="setStars('m9',4)">★</span>
+        <span class="star" onclick="setStars('m9',5)">★</span>
+      </div>
+      <textarea id="txt-m9" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m9')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m9"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m20" data-area="Jakarta Timur">
+  <div class="card-top">
+    <div class="card-numbadge">20</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Al Fattah</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Jakarta Timur</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidalfattah" target="_blank">@masjidalfattah</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Jatinegara / Klender (lanjut ojol) · Transjakarta koridor 4/9</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/4amrYtHCNYVGsNYf8" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidalfattah" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m20')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m20">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m20" style="display:none;">
+      <div class="star-row" id="stars-m20">
+        <span class="star" onclick="setStars('m20',1)">★</span>
+        <span class="star" onclick="setStars('m20',2)">★</span>
+        <span class="star" onclick="setStars('m20',3)">★</span>
+        <span class="star" onclick="setStars('m20',4)">★</span>
+        <span class="star" onclick="setStars('m20',5)">★</span>
+      </div>
+      <textarea id="txt-m20" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m20')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m20"></div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="wilayah-group" id="group-jakarta-barat" data-group="jakarta-barat">
+  <div class="wilayah-header">
+        <span class="wilayah-name">Jakarta Barat</span>
+    <span class="wilayah-count">1 masjid</span>
+  </div>
+  <div class="mosque-grid">
+<div class="mosque-card" id="m11" data-area="Tamansari, Jakarta Barat">
+  <div class="card-top">
+    <div class="card-numbadge">11</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Jami Al Mubarak</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Tamansari, Jakarta Barat</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjid.almubarak" target="_blank">@masjid.almubarak</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Jayakarta / Kampung Bandan (±15 mnt ojol) · Transjakarta Tamansari</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/uupnrEBjuMpzhDUXA" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjid.almubarak" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m11')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m11">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m11" style="display:none;">
+      <div class="star-row" id="stars-m11">
+        <span class="star" onclick="setStars('m11',1)">★</span>
+        <span class="star" onclick="setStars('m11',2)">★</span>
+        <span class="star" onclick="setStars('m11',3)">★</span>
+        <span class="star" onclick="setStars('m11',4)">★</span>
+        <span class="star" onclick="setStars('m11',5)">★</span>
+      </div>
+      <textarea id="txt-m11" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m11')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m11"></div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="wilayah-group" id="group-bogor" data-group="bogor">
+  <div class="wilayah-header">
+        <span class="wilayah-name">Bogor & Sekitarnya</span>
+    <span class="wilayah-count">10 masjid</span>
+  </div>
+  <div class="mosque-grid">
+<div class="mosque-card" id="m1" data-area="Cileungsi, Bogor">
+  <div class="card-top">
+    <div class="card-numbadge">01</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Al Barkah Cileungsi</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cileungsi, Bogor</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidalbarkahcileungsi" target="_blank">@masjidalbarkahcileungsi</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">Angkot dari Terminal Cileungsi · ±40 mnt dari Jakarta via Tol Jagorawi</span></div>
+  <div class="card-links"><a href="https://share.google/P9PZ1wVaXO2LmmVJg" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidalbarkahcileungsi" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a>
+<a href="https://www.google.com/maps/place/Jami'+Al-Barkah+Mosque,+Cileungsi/@-6.3952423,106.9587858,17z" target="_blank" class="card-pill pill-mapdir"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Navigasi</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m1')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m1">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m1" style="display:none;">
+      <div class="star-row" id="stars-m1">
+        <span class="star" onclick="setStars('m1',1)">★</span>
+        <span class="star" onclick="setStars('m1',2)">★</span>
+        <span class="star" onclick="setStars('m1',3)">★</span>
+        <span class="star" onclick="setStars('m1',4)">★</span>
+        <span class="star" onclick="setStars('m1',5)">★</span>
+      </div>
+      <textarea id="txt-m1" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m1')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m1"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m4" data-area="Cibarusah, Bekasi">
+  <div class="card-top">
+    <div class="card-numbadge">04</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Jami At-Tadzkirah</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cibarusah, Bekasi</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian di <a href="https://attadzkirah-cibarusah.my.id/" target="_blank">website resmi</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">Angkot dari Cikarang atau Cibitung · Akses lebih mudah via kendaraan pribadi</span></div>
+  <div class="card-links"><a href="https://www.google.com/maps?ll=-6.416485,107.089032&z=17&cid=9115738455626451589" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://attadzkirah-cibarusah.my.id/" target="_blank" class="card-pill pill-web"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Website</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m4')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m4">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m4" style="display:none;">
+      <div class="star-row" id="stars-m4">
+        <span class="star" onclick="setStars('m4',1)">★</span>
+        <span class="star" onclick="setStars('m4',2)">★</span>
+        <span class="star" onclick="setStars('m4',3)">★</span>
+        <span class="star" onclick="setStars('m4',4)">★</span>
+        <span class="star" onclick="setStars('m4',5)">★</span>
+      </div>
+      <textarea id="txt-m4" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m4')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m4"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m5" data-area="Cibubur, Bekasi">
+  <div class="card-top">
+    <div class="card-numbadge">05</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Shafa Marwah</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cibubur, Bekasi</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidshafamarwah" target="_blank">@masjidshafamarwah</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">Transjakarta BRT Cibubur · Bus Damri Cibubur · ±30 mnt dari Kampung Rambutan</span></div>
+  <div class="card-links"><a href="https://share.google/VzRHfS5rx7KjuEaTU" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidshafamarwah" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a>
+<a href="https://www.google.com/maps/place/Masjid+Shafa+Marwah/@-6.3879118,106.9388792,17z" target="_blank" class="card-pill pill-mapdir"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Navigasi</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m5')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m5">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m5" style="display:none;">
+      <div class="star-row" id="stars-m5">
+        <span class="star" onclick="setStars('m5',1)">★</span>
+        <span class="star" onclick="setStars('m5',2)">★</span>
+        <span class="star" onclick="setStars('m5',3)">★</span>
+        <span class="star" onclick="setStars('m5',4)">★</span>
+        <span class="star" onclick="setStars('m5',5)">★</span>
+      </div>
+      <textarea id="txt-m5" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m5')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m5"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m6" data-area="Gunung Putri, Bogor">
+  <div class="card-top">
+    <div class="card-numbadge">06</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Jami Daarut Taibin</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Gunung Putri, Bogor</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian di <a href="https://www.facebook.com/groups/166251818256328/" target="_blank">Facebook Group</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">Angkot Gunung Putri – Cileungsi · ±45 mnt dari Bekasi via Tol Jagorawi</span></div>
+  <div class="card-links"><a href="https://share.google/bVrOTcSRWNdtXLl5I" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.facebook.com/groups/166251818256328/" target="_blank" class="card-pill pill-fb"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Jadwal Kajian</a>
+<a href="https://www.google.com/maps/place/Masjid+Jami+Daarut+Taibin" target="_blank" class="card-pill pill-mapdir"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Navigasi</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m6')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m6">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m6" style="display:none;">
+      <div class="star-row" id="stars-m6">
+        <span class="star" onclick="setStars('m6',1)">★</span>
+        <span class="star" onclick="setStars('m6',2)">★</span>
+        <span class="star" onclick="setStars('m6',3)">★</span>
+        <span class="star" onclick="setStars('m6',4)">★</span>
+        <span class="star" onclick="setStars('m6',5)">★</span>
+      </div>
+      <textarea id="txt-m6" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m6')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m6"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m7" data-area="Griya Bukit Jaya, Bekasi">
+  <div class="card-top">
+    <div class="card-numbadge">07</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Nurul Iman Griya Bukit Jaya</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Griya Bukit Jaya, Bekasi</p>
+    </div>
+  </div>
+  
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">Angkot dari Stasiun Bekasi · Akses via Jl. Narogong</span></div>
+  <div class="card-links"><a href="https://share.google/0iSvS9m5ciNzZisQm" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.google.com/maps/place/Masjid+Jami+Nurul+Iman" target="_blank" class="card-pill pill-mapdir"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Navigasi</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m7')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m7">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m7" style="display:none;">
+      <div class="star-row" id="stars-m7">
+        <span class="star" onclick="setStars('m7',1)">★</span>
+        <span class="star" onclick="setStars('m7',2)">★</span>
+        <span class="star" onclick="setStars('m7',3)">★</span>
+        <span class="star" onclick="setStars('m7',4)">★</span>
+        <span class="star" onclick="setStars('m7',5)">★</span>
+      </div>
+      <textarea id="txt-m7" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m7')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m7"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m12" data-area="Cibubur, Bekasi">
+  <div class="card-top">
+    <div class="card-numbadge">12</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Babussalam As-Sunnah</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cibubur, Bekasi</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/babussalam_assunnah" target="_blank">@babussalam_assunnah</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">Transjakarta BRT Cibubur · ±30 mnt dari Kampung Rambutan</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/12s5SkLVXUQJFN1g8" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/babussalam_assunnah" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m12')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m12">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m12" style="display:none;">
+      <div class="star-row" id="stars-m12">
+        <span class="star" onclick="setStars('m12',1)">★</span>
+        <span class="star" onclick="setStars('m12',2)">★</span>
+        <span class="star" onclick="setStars('m12',3)">★</span>
+        <span class="star" onclick="setStars('m12',4)">★</span>
+        <span class="star" onclick="setStars('m12',5)">★</span>
+      </div>
+      <textarea id="txt-m12" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m12')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m12"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m13" data-area="Cikaret, Bogor">
+  <div class="card-top">
+    <div class="card-numbadge">13</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Jami Al Hikmah</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cikaret, Bogor</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/alhikmah_cikaret" target="_blank">@alhikmah_cikaret</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Bogor (lanjut angkot/ojol ke Cikaret) · Angkot 06/08 dari Stasiun Bogor</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/5GsA7ZodhXAUYjQh6" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/alhikmah_cikaret" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m13')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m13">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m13" style="display:none;">
+      <div class="star-row" id="stars-m13">
+        <span class="star" onclick="setStars('m13',1)">★</span>
+        <span class="star" onclick="setStars('m13',2)">★</span>
+        <span class="star" onclick="setStars('m13',3)">★</span>
+        <span class="star" onclick="setStars('m13',4)">★</span>
+        <span class="star" onclick="setStars('m13',5)">★</span>
+      </div>
+      <textarea id="txt-m13" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m13')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m13"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m14" data-area="Pekojan, Bogor">
+  <div class="card-top">
+    <div class="card-numbadge">14</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid At-Taqwa Pekojan</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Pekojan, Bogor</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidattaqwa.pekojan" target="_blank">@masjidattaqwa.pekojan</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Bogor (lanjut angkot ke Pekojan) · Angkot 03 dari Stasiun Bogor</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/huhEPxRy5YJf8L5n8" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidattaqwa.pekojan" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m14')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m14">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m14" style="display:none;">
+      <div class="star-row" id="stars-m14">
+        <span class="star" onclick="setStars('m14',1)">★</span>
+        <span class="star" onclick="setStars('m14',2)">★</span>
+        <span class="star" onclick="setStars('m14',3)">★</span>
+        <span class="star" onclick="setStars('m14',4)">★</span>
+        <span class="star" onclick="setStars('m14',5)">★</span>
+      </div>
+      <textarea id="txt-m14" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m14')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m14"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m15" data-area="Taman Yasmin, Kota Bogor">
+  <div class="card-top">
+    <div class="card-numbadge">15</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Al Istiqomah Taman Yasmin</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Taman Yasmin, Kota Bogor</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/al_istiqomah_yasmin" target="_blank">@al_istiqomah_yasmin</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Bogor → bus/angkot ke Yasmin · Trans Pakuan koridor 1 dari Stasiun Bogor</span></div>
+  <div class="card-links"><a href="https://share.google/m6OtBKHZFwDhbE03y" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/al_istiqomah_yasmin" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a>
+<a href="https://maps.app.goo.gl/HTVJxGJ3rLQZFoUd6" target="_blank" class="card-pill pill-mapdir"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Navigasi</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m15')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m15">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m15" style="display:none;">
+      <div class="star-row" id="stars-m15">
+        <span class="star" onclick="setStars('m15',1)">★</span>
+        <span class="star" onclick="setStars('m15',2)">★</span>
+        <span class="star" onclick="setStars('m15',3)">★</span>
+        <span class="star" onclick="setStars('m15',4)">★</span>
+        <span class="star" onclick="setStars('m15',5)">★</span>
+      </div>
+      <textarea id="txt-m15" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m15')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m15"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m16" data-area="Jonggol, Bogor">
+  <div class="card-top">
+    <div class="card-numbadge">16</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Al-Qomroh</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Jonggol, Bogor</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidalqomroh" target="_blank">@masjidalqomroh</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">Bus dari Kampung Rambutan jurusan Jonggol · ±1 jam dari Jakarta via Jl. Raya Jonggol</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/TE6QhbJ55WhAWyjR7" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidalqomroh" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m16')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m16">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m16" style="display:none;">
+      <div class="star-row" id="stars-m16">
+        <span class="star" onclick="setStars('m16',1)">★</span>
+        <span class="star" onclick="setStars('m16',2)">★</span>
+        <span class="star" onclick="setStars('m16',3)">★</span>
+        <span class="star" onclick="setStars('m16',4)">★</span>
+        <span class="star" onclick="setStars('m16',5)">★</span>
+      </div>
+      <textarea id="txt-m16" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m16')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m16"></div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="wilayah-group" id="group-bekasi" data-group="bekasi">
+  <div class="wilayah-header">
+        <span class="wilayah-name">Bekasi</span>
+    <span class="wilayah-count">4 masjid</span>
+  </div>
+  <div class="mosque-grid">
+<div class="mosque-card" id="m17" data-area="Bekasi">
+  <div class="card-top">
+    <div class="card-numbadge">17</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Jami Al Ihsan</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bekasi</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidalihsanbekasi" target="_blank">@masjidalihsanbekasi</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Bekasi / Bekasi Timur (lanjut ojol) · Transjakarta 5D/7C arah Bekasi</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/5UkfghQ6XkSRooR28" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidalihsanbekasi" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m17')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m17">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m17" style="display:none;">
+      <div class="star-row" id="stars-m17">
+        <span class="star" onclick="setStars('m17',1)">★</span>
+        <span class="star" onclick="setStars('m17',2)">★</span>
+        <span class="star" onclick="setStars('m17',3)">★</span>
+        <span class="star" onclick="setStars('m17',4)">★</span>
+        <span class="star" onclick="setStars('m17',5)">★</span>
+      </div>
+      <textarea id="txt-m17" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m17')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m17"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m18" data-area="Bekasi">
+  <div class="card-top">
+    <div class="card-numbadge">18</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Al-Ahdhar</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bekasi</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidalahdhar" target="_blank">@masjidalahdhar</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Bekasi (lanjut ojol) · Transjakarta arah Bekasi</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/4VjmfBYETPzck7SM6" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidalahdhar" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m18')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m18">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m18" style="display:none;">
+      <div class="star-row" id="stars-m18">
+        <span class="star" onclick="setStars('m18',1)">★</span>
+        <span class="star" onclick="setStars('m18',2)">★</span>
+        <span class="star" onclick="setStars('m18',3)">★</span>
+        <span class="star" onclick="setStars('m18',4)">★</span>
+        <span class="star" onclick="setStars('m18',5)">★</span>
+      </div>
+      <textarea id="txt-m18" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m18')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m18"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m19" data-area="Bekasi">
+  <div class="card-top">
+    <div class="card-numbadge">19</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Jami Utsman bin Affan</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bekasi</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidjamiutsmanbinaffan" target="_blank">@masjidjamiutsmanbinaffan</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Bekasi (lanjut ojol) · Angkot dari Terminal Bekasi</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/WeVW8nFQXAyTR1F66" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidjamiutsmanbinaffan" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m19')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m19">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m19" style="display:none;">
+      <div class="star-row" id="stars-m19">
+        <span class="star" onclick="setStars('m19',1)">★</span>
+        <span class="star" onclick="setStars('m19',2)">★</span>
+        <span class="star" onclick="setStars('m19',3)">★</span>
+        <span class="star" onclick="setStars('m19',4)">★</span>
+        <span class="star" onclick="setStars('m19',5)">★</span>
+      </div>
+      <textarea id="txt-m19" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m19')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m19"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m29" data-area="Bekasi">
+  <div class="card-top">
+    <div class="card-numbadge">29</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Al Fursan</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bekasi</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidalfursan" target="_blank">@masjidalfursan</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Bekasi (lanjut ojol) · Bus/angkot dari Terminal Bekasi</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/Qb6uD1tSNaXSy6269" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidalfursan" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m29')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m29">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m29" style="display:none;">
+      <div class="star-row" id="stars-m29">
+        <span class="star" onclick="setStars('m29',1)">★</span>
+        <span class="star" onclick="setStars('m29',2)">★</span>
+        <span class="star" onclick="setStars('m29',3)">★</span>
+        <span class="star" onclick="setStars('m29',4)">★</span>
+        <span class="star" onclick="setStars('m29',5)">★</span>
+      </div>
+      <textarea id="txt-m29" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m29')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m29"></div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="wilayah-group" id="group-depok" data-group="depok">
+  <div class="wilayah-header">
+        <span class="wilayah-name">Depok</span>
+    <span class="wilayah-count">2 masjid</span>
+  </div>
+  <div class="mosque-grid">
+<div class="mosque-card" id="m10" data-area="Depok">
+  <div class="card-top">
+    <div class="card-numbadge">10</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Imam Asy Syafi'i</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Depok</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/mias.depok" target="_blank">@mias.depok</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Depok Baru / Depok (lanjut ojol) · Angkot D01/D05 dari Stasiun Depok</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/5pn8Tugp3C3cCD6d7" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/mias.depok" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m10')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m10">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m10" style="display:none;">
+      <div class="star-row" id="stars-m10">
+        <span class="star" onclick="setStars('m10',1)">★</span>
+        <span class="star" onclick="setStars('m10',2)">★</span>
+        <span class="star" onclick="setStars('m10',3)">★</span>
+        <span class="star" onclick="setStars('m10',4)">★</span>
+        <span class="star" onclick="setStars('m10',5)">★</span>
+      </div>
+      <textarea id="txt-m10" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m10')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m10"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m27" data-area="Depok">
+  <div class="card-top">
+    <div class="card-numbadge">27</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Ar-Riyadh</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Depok</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/mtarriyadh_depok" target="_blank">@mtarriyadh_depok</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Depok / Depok Baru (lanjut angkot/ojol) · Angkot D08 dari Stasiun Depok</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/hgFmRhSwa1cRyBfZ9" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/mtarriyadh_depok" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m27')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m27">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m27" style="display:none;">
+      <div class="star-row" id="stars-m27">
+        <span class="star" onclick="setStars('m27',1)">★</span>
+        <span class="star" onclick="setStars('m27',2)">★</span>
+        <span class="star" onclick="setStars('m27',3)">★</span>
+        <span class="star" onclick="setStars('m27',4)">★</span>
+        <span class="star" onclick="setStars('m27',5)">★</span>
+      </div>
+      <textarea id="txt-m27" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m27')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m27"></div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="wilayah-group" id="group-tangerang" data-group="tangerang">
+  <div class="wilayah-header">
+        <span class="wilayah-name">Tangerang & Tangsel</span>
+    <span class="wilayah-count">3 masjid</span>
+  </div>
+  <div class="mosque-grid">
+<div class="mosque-card" id="m24" data-area="Bintaro, Tangerang Selatan">
+  <div class="card-top">
+    <div class="card-numbadge">24</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid As Sunnah Bintaro</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bintaro, Tangerang Selatan</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidassunnahbintaro" target="_blank">@masjidassunnahbintaro</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Sudimara / Pondok Ranji (lanjut ojol) · Transjakarta 8C ke Bintaro</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/ygyPSYA6rc4UCwm88" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidassunnahbintaro" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m24')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m24">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m24" style="display:none;">
+      <div class="star-row" id="stars-m24">
+        <span class="star" onclick="setStars('m24',1)">★</span>
+        <span class="star" onclick="setStars('m24',2)">★</span>
+        <span class="star" onclick="setStars('m24',3)">★</span>
+        <span class="star" onclick="setStars('m24',4)">★</span>
+        <span class="star" onclick="setStars('m24',5)">★</span>
+      </div>
+      <textarea id="txt-m24" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m24')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m24"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m26" data-area="Cipondoh, Tangerang">
+  <div class="card-top">
+    <div class="card-numbadge">26</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid An Nabawi</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cipondoh, Tangerang</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/annabawitv" target="_blank">@annabawitv</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">Angkot dari Terminal Poris / Kalideres · Via Jl. Daan Mogot, ±40 mnt dari Jakarta</span></div>
+  <div class="card-links"><a href="https://www.google.com/maps/place/Jami+An-Nabawi+Mosque,+Cipondoh+Tangerang" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/annabawitv" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m26')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m26">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m26" style="display:none;">
+      <div class="star-row" id="stars-m26">
+        <span class="star" onclick="setStars('m26',1)">★</span>
+        <span class="star" onclick="setStars('m26',2)">★</span>
+        <span class="star" onclick="setStars('m26',3)">★</span>
+        <span class="star" onclick="setStars('m26',4)">★</span>
+        <span class="star" onclick="setStars('m26',5)">★</span>
+      </div>
+      <textarea id="txt-m26" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m26')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m26"></div>
+  </div>
+</div>
+<div class="mosque-card" id="m28" data-area="Sawah Baru, Ciputat, Tangsel">
+  <div class="card-top">
+    <div class="card-numbadge">28</div>
+    <div class="card-info">
+      <h3 class="card-name">Masjid Al Barkah Sawah Baru</h3>
+      <p class="card-area"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Sawah Baru, Ciputat, Tangsel</p>
+    </div>
+  </div>
+  <div class="schedule-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Cek jadwal kajian terbaru di <a href="https://www.instagram.com/masjidalbarkah_sawahbaru" target="_blank">@masjidalbarkah_sawahbaru</a></div>
+  <div class="transport-note"><span class="transport-label">Akses Transportasi</span><span class="transport-text">KRL Sudimara / Rawabuntu (lanjut ojol) · Transjakarta Ciputat</span></div>
+  <div class="card-links"><a href="https://maps.app.goo.gl/gbQB82CQNDixxxKf6" target="_blank" class="card-pill pill-map"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps</a>
+<a href="https://www.instagram.com/masjidalbarkah_sawahbaru" target="_blank" class="card-pill pill-ig"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Jadwal Kajian</a></div>
+  <div class="review-section">
+    <button class="review-toggle-btn" onclick="toggleReview('m28')">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span id="reviewbtn-m28">Tulis Ulasan</span>
+    </button>
+    <div class="review-form" id="form-m28" style="display:none;">
+      <div class="star-row" id="stars-m28">
+        <span class="star" onclick="setStars('m28',1)">★</span>
+        <span class="star" onclick="setStars('m28',2)">★</span>
+        <span class="star" onclick="setStars('m28',3)">★</span>
+        <span class="star" onclick="setStars('m28',4)">★</span>
+        <span class="star" onclick="setStars('m28',5)">★</span>
+      </div>
+      <textarea id="txt-m28" placeholder="Ceritakan pengalamanmu — suasana kajian, ustadz yang mengisi, tips untuk yang pertama kali datang..." rows="3"></textarea>
+      <button class="submit-review-btn" onclick="submitReview('m28')">Kirim Ulasan</button>
+    </div>
+    <div class="reviews-list" id="rlist-m28"></div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB: FAQ                                    -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="tab-content" id="content-faq">
+<div class="content-wrap">
+
+  <div class="sec-eyebrow">Pertanyaan Umum</div>
+  <h2 class="sec-title">FAQ</h2>
+  <p class="sec-sub">Hal-hal yang sering ditanyakan seputar menghadiri kajian offline.</p>
+  <div class="sec-rule"></div>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Gimana cara tahu jadwal kajian di tiap masjid?</span>
+        <div class="faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="faq-a">
+        Cara paling mudah dan up-to-date adalah dengan <strong>follow Instagram resmi</strong> masing-masing masjid. Di tab Daftar Masjid, setiap kartu punya tombol <strong>"Jadwal Kajian"</strong> yang langsung mengarahkan ke Instagram masjid tersebut.<br><br>
+        Biasanya jadwal diposting seminggu sekali atau H-1 sebelum kajian. Kamu juga bisa cek highlight Stories atau feed mereka.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Apakah kajian di masjid-masjid ini terbuka untuk umum?</span>
+        <div class="faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="faq-a">
+        Sebagian besar kajian yang tercantum di sini <strong>terbuka untuk umum dan gratis</strong>. Namun ada beberapa yang mungkin khusus untuk jamaah tertentu atau membutuhkan pendaftaran sebelumnya.<br><br>
+        Selalu <strong>konfirmasi langsung via Instagram atau kontak masjid</strong> sebelum berangkat, terutama untuk kajian yang pertama kali kamu kunjungi.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Apa yang perlu dibawa saat menghadiri kajian?</span>
+        <div class="faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="faq-a">
+        Beberapa hal yang dianjurkan:<br><br>
+        • <strong>Buku catatan dan pulpen</strong> — untuk mencatat faidah ilmu. <em>"Ikatlah ilmu dengan tulisan."</em><br>
+        • <strong>Al-Qur'an atau kitab</strong> — terutama jika ada kajian kitab tertentu yang sedang dibahas.<br>
+        • <strong>Pakaian yang rapi dan menutup aurat</strong><br>
+        • <strong>Wudhu terlebih dahulu</strong> jika memungkinkan<br>
+        • <strong>Mindset yang terbuka</strong> — datang untuk belajar, bukan untuk menghakimi.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Boleh tidak datang terlambat ke kajian?</span>
+        <div class="faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="faq-a">
+        Boleh saja, dan lebih baik datang terlambat daripada tidak hadir sama sekali. Namun ada adabnya:<br><br>
+        • Masuk dengan <strong>tidak mengganggu jamaah yang sedang menyimak</strong><br>
+        • Duduk di tempat yang paling dekat dan tidak perlu melewati banyak orang<br>
+        • Jangan tanya ke orang di sebelah saat kajian berlangsung — tanyakan setelah selesai
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Apakah boleh merekam kajian?</span>
+        <div class="faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="faq-a">
+        Tergantung kebijakan masing-masing masjid dan ustadz yang mengisi. <strong>Minta izin terlebih dahulu</strong> sebelum merekam. Beberapa ustadz memperbolehkan untuk keperluan belajar pribadi, namun keberatan jika disebarluaskan tanpa izin.<br><br>
+        Banyak masjid juga sudah memiliki saluran YouTube atau channel resmi — cek di Instagram mereka.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Masjid saya tidak ada di daftar ini, bagaimana cara menambahkannya?</span>
+        <div class="faq-chevron"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="faq-a">
+        Halaman ini bersifat <em>community-driven</em>. Daftar ini dikurasi dari berbagai sumber komunitas dan terus berkembang. Jika kamu tahu masjid yang aktif mengadakan kajian sunnah di Jabodetabek dan belum tercantum, <strong>silakan hubungi pengelola halaman ini</strong> untuk ditambahkan.
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-name">Majelis Finder</div>
+  <p class="footer-note">Selalu verifikasi jadwal langsung ke masjid. Semoga setiap langkah mencari ilmu diberkahi Allah.</p>
+  <div class="footer-arabic">بَارَكَ اللّٰهُ فِيكُمْ</div>
+</footer>
+
+<script>
+// ── TAB SWITCHING ──────────────────────────────
+function switchTab(name){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  document.getElementById('content-'+name).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(name === 'masjid') loadAllReviews();
+}
+
+// ── MOSQUE FILTER + SEARCH ─────────────────────
+let activeFilter = 'semua';
+
+function setFilter(el, filter){
+  document.querySelectorAll('.ftab').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  activeFilter = filter;
+  filterMosques();
+  // Smooth scroll to top of groups
+  const groups = document.getElementById('mosque-groups');
+  if(groups) groups.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function filterMosques(){
+  const q = document.getElementById('search-input').value.toLowerCase().trim();
+  const groups = document.querySelectorAll('.wilayah-group');
+  let totalVisible = 0;
+
+  groups.forEach(group => {
+    const groupKey = group.dataset.group;
+    const showGroup = activeFilter === 'semua' || activeFilter === groupKey;
+
+    if(!showGroup && !q){
+      group.classList.add('hidden');
+      return;
+    }
+
+    // Show group, then filter cards inside
+    group.classList.remove('hidden');
+    const cards = group.querySelectorAll('.mosque-card');
+    let groupVisible = 0;
+
+    cards.forEach(card => {
+      const area = (card.dataset.area||'').toLowerCase();
+      const name = card.querySelector('.card-name').textContent.toLowerCase();
+      const matchFilter = activeFilter === 'semua' || activeFilter === groupKey;
+      const matchSearch = !q || name.includes(q) || area.includes(q);
+
+      if(matchFilter && matchSearch){
+        card.classList.remove('hidden');
+        groupVisible++;
+        totalVisible++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Hide group header if no cards match
+    if(groupVisible === 0){
+      group.classList.add('hidden');
+    }
+  });
+
+  const countEl = document.getElementById('count-num');
+  if(countEl) countEl.textContent = totalVisible || (q ? '0' : '30');
+}
+
+// ── REVIEWS ────────────────────────────────────
+const ratingsMap = {};
+
+function toggleReview(mid){
+  const form = document.getElementById('form-'+mid);
+  if(!form) return;
+  const isOpen = form.style.display !== 'none';
+  form.style.display = isOpen ? 'none' : 'block';
+  if(!isOpen) loadReviews(mid);
+}
+
+function setStars(mid, val){
+  ratingsMap[mid] = val;
+  const stars = document.querySelectorAll('#stars-'+mid+' .star');
+  stars.forEach((s,i) => s.classList.toggle('lit', i < val));
+}
+
+function submitReview(mid){
+  const txtEl = document.getElementById('txt-'+mid);
+  const formEl = document.getElementById('form-'+mid);
+  if(!txtEl || !formEl) return;
+  const txt = txtEl.value.trim();
+  const rating = ratingsMap[mid] || 0;
+  if(!txt){ alert('Tulis ulasanmu dulu ya '); return; }
+  if(!rating){ alert('Kasih bintang dulu ya!'); return; }
+  const key = 'reviews_'+mid;
+  const existing = JSON.parse(localStorage.getItem(key)||'[]');
+  existing.unshift({
+    rating,
+    text: txt,
+    date: new Date().toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})
+  });
+  localStorage.setItem(key, JSON.stringify(existing));
+  txtEl.value = '';
+  ratingsMap[mid] = 0;
+  document.querySelectorAll('#stars-'+mid+' .star').forEach(s => s.classList.remove('lit'));
+  formEl.style.display = 'none';
+  loadReviews(mid);
+}
+
+function loadReviews(mid){
+  const container = document.getElementById('rlist-'+mid);
+  if(!container) return;
+  const key = 'reviews_'+mid;
+  const reviews = JSON.parse(localStorage.getItem(key)||'[]');
+  if(!reviews.length){
+    container.innerHTML = '<p class="empty-reviews">Belum ada ulasan. Jadilah yang pertama!</p>';
+    return;
+  }
+  container.innerHTML = reviews.map(r => `
+    <div class="review-item">
+      <div class="review-header">
+        <span class="review-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</span>
+        <span class="review-date">${r.date}</span>
+      </div>
+      <p class="review-text">${r.text.replace(/</g,'&lt;')}</p>
+    </div>
+  `).join('');
+}
+
+// Load reviews only when masjid tab becomes visible
+function loadAllReviews(){
+  document.querySelectorAll('.mosque-card').forEach(card => {
+    loadReviews(card.id);
+  });
+}
+
+
+// ── FAQ ACCORDION ──────────────────────────────
+function toggleFaq(qEl){
+  const item = qEl.parentElement;
+  const answer = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>{
+    i.classList.remove('open');
+    i.querySelector('.faq-a').classList.remove('visible');
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    answer.classList.add('visible');
+  }
+}
+</script>
+
+</body>
+</html>
